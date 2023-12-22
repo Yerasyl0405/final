@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+      color: #343a40;
+    }
+
+    h2 {
+      color: #007bff;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    li {
+      margin-bottom: 20px;
+      width: 45%;
+      box-sizing: border-box;
+    }
+
+    .article-card {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .article-card:hover {
+      transform: scale(1.03);
+    }
+
+    h3 {
+      color: #343a40;
+      margin-top: 0;
+    }
+
+    p {
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+<h2>List of Articles</h2>
+<ul>
+  <li th:each="article : ${articles}">
+    <div class="article-card">
+      <h3 th:text="${article.title}"></h3>
+      <p th:text="${article.content}"></p>
+      <p th:text="${article.theme}"></p>
+    </div>
+  </li>
+</ul>
+</body>
+</html>
+

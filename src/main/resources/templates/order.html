@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение цены товара</title>
+</head>
+<body>
+<h1>Изменение цены товара</h1>
+<form action="/updatePrice" method="post">
+    <label for="productId">ID товара:</label>
+    <input type="text" id="productId" name="productId" required>
+    <br>
+    <label for="newPrice">Новая цена:</label>
+    <input type="text" id="newPrice" name="newPrice" required>
+    <br>
+    <input type="submit" value="Обновить цену">
+</form>
+</body>
+</html>
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .form-signin {
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+
+    .form-signin label {
+      margin-bottom: 10px;
+    }
+
+    .form-signin input[type="password"] {
+      font-size: 16px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    .form-signin button {
+      font-size: 18px;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-signin button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body class="text-center">
+<form class="form-signin" action="/login" method="post">
+  <label for="password" class="sr-only">Password</label>
+  <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <!-- Thymeleaf condition to display error message -->
+  <p th:if="${param.error}" class="error-message">Invalid password. Please try again.</p>
+</form>
+</body>
+</html>

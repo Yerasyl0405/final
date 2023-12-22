@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Order Details</title>
+</head>
+<body>
+<h1>Order Details</h1>
+
+<p>Order ID: <span th:text="${order.id}"></span></p>
+<p>Status: <span th:text="${order.status}"></span></p>
+<!-- Добавьте другие поля заказа по необходимости -->
+
+<p><a th:href="@{/placeOrder}">Place a New Order</a></p>
+</body>
+</html>
